@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="Cacheron.dll" Id="34b3bbff-0c42-4d95-aa53-e280b236c45f" IsolationMode="Sandbox" SourceType="Database">
+      <PluginTypes>
+        <Plugin Description="NotifyEntityChangePlugin" FriendlyName="NotifyEntityChangePlugin" Name="Cacheron.NotifyEntityChangePlugin" Id="604226b6-cd4c-4e37-b1a2-6ff692070983" TypeName="Cacheron.NotifyEntityChangePlugin">
+          <Steps>
+            <clear />
+            <Step Name="PostOutsideTransactionaccountCreate" Description="PostOutsideTransaction of account Create" Id="2900bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="account" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionaccountUpdate" Description="PostOutsideTransaction of account Update" Id="2c00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="account" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionaccountDelete" Description="PostOutsideTransaction of account Delete" Id="2f00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="account" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioncontactCreate" Description="PostOutsideTransaction of contact Create" Id="3200bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="contact" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioncontactUpdate" Description="PostOutsideTransaction of contact Update" Id="3500bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="contact" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioncontactDelete" Description="PostOutsideTransaction of contact Delete" Id="3800bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="contact" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionsalesorderCreate" Description="PostOutsideTransaction of salesorder Create" Id="3b00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionsalesorderUpdate" Description="PostOutsideTransaction of salesorder Update" Id="3e00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionsalesorderDelete" Description="PostOutsideTransaction of salesorder Delete" Id="4100bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioninvoiceCreate" Description="PostOutsideTransaction of invoice Create" Id="4400bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="invoice" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioninvoiceUpdate" Description="PostOutsideTransaction of invoice Update" Id="4700bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="invoice" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioninvoiceDelete" Description="PostOutsideTransaction of invoice Delete" Id="4a00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="invoice" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioncontractCreate" Description="PostOutsideTransaction of contract Create" Id="4d00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="contract" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioncontractUpdate" Description="PostOutsideTransaction of contract Update" Id="5000bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="contract" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactioncontractDelete" Description="PostOutsideTransaction of contract Delete" Id="5300bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="contract" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionleadCreate" Description="PostOutsideTransaction of lead Create" Id="5600bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="lead" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionleadUpdate" Description="PostOutsideTransaction of lead Update" Id="5900bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="lead" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionleadDelete" Description="PostOutsideTransaction of lead Delete" Id="5c00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="lead" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionopportunityCreate" Description="PostOutsideTransaction of opportunity Create" Id="5f00bc0e-a1e0-e511-80d3-005056873be7" MessageName="Create" Mode="Asynchronous" PrimaryEntityName="opportunity" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionopportunityUpdate" Description="PostOutsideTransaction of opportunity Update" Id="6200bc0e-a1e0-e511-80d3-005056873be7" MessageName="Update" Mode="Asynchronous" PrimaryEntityName="opportunity" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+            <Step Name="PostOutsideTransactionopportunityDelete" Description="PostOutsideTransaction of opportunity Delete" Id="6500bc0e-a1e0-e511-80d3-005056873be7" MessageName="Delete" Mode="Asynchronous" PrimaryEntityName="opportunity" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" />
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows />
+</Register>
