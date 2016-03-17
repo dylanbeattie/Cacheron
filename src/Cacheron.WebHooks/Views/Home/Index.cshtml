@@ -1,0 +1,11 @@
+﻿@model System.Collections.Generic.List<string>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>REQUESTS</h2>
+@foreach (var request in Model) {
+    <pre>@request</pre>
+    <hr />
+}

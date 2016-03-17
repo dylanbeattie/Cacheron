@@ -95,7 +95,6 @@ namespace Cacheron {
         }
 
 
-        [XmlRoot("Plugin")]
         public class PluginRegistration {
             [XmlAttribute]
             public string Description { get; set; }
@@ -112,7 +111,8 @@ namespace Cacheron {
             [XmlAttribute]
             public string TypeName { get; set; }
 
-            [XmlElement(ElementName = "Step")]
+            [XmlArray]
+            [XmlArrayItem("Step")]
             public List<PluginRegistrationStep> Steps { get; set; }
         }
 

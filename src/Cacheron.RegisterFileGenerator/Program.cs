@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.ServiceModel.Security.Tokens;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +26,16 @@ namespace Cacheron.RegisterFileGenerator {
             xns.Add(String.Empty, "http://schemas.microsoft.com/crm/2011/tools/pluginregistration");
 
             xns.Add(string.Empty, string.Empty);
-            using (var sw = new StringWriter()) {
+            using (var sw = new Utf8StringWriter()) {
                 using (var xw = XmlWriter.Create(sw)) {
                     serializer.Serialize(xw, register, xns);
-                    File.WriteAllText(@"D:\Projects\Cacheron\CacheronPackage\register.xml", Prettify(sw.ToString()));
+                    File.WriteAllText(@"D:\Projects\Cacheron\src\CacheronPackage\register.xml", Prettify(sw.ToString()), Encoding.UTF8);
                 }
             }
+        }
+
+        public class Utf8StringWriter : StringWriter {
+            public override Encoding Encoding { get { return Encoding.UTF8; } }
         }
 
         private static string Prettify(string xml) {
@@ -38,6 +43,15 @@ namespace Cacheron.RegisterFileGenerator {
                 using (var xtw = new XmlTextWriter(ms, Encoding.UTF8)) {
                     var doc = new XmlDocument();
                     doc.LoadXml(xml);
+                    var root = doc.DocumentElement;
+                    var xmlnsAttribute = doc.CreateAttribute("xmlns");
+                    xmlnsAttribute.Value = "http://schemas.microsoft.com/crm/2011/tools/pluginregistration";
+                    root.Attributes.Append(xmlnsAttribute);
+                    var stepLists = doc.SelectNodes("//Register/Solutions/Solution/PluginTypes/Plugin/Steps");
+                    foreach (XmlElement stepList in stepLists) {
+                        var clearNode = doc.CreateNode(XmlNodeType.Element, "clear", null);
+                        stepList.PrependChild(clearNode);
+                    }
                     xtw.Formatting = Formatting.Indented;
                     doc.WriteContentTo(xtw);
                     xtw.Flush();
@@ -56,6 +70,30 @@ namespace Cacheron.RegisterFileGenerator {
             Solutions = new List<Solution>();
         }
     }
+
+    //public class PluginType {
+
+    //    public PluginType() { }
+
+    //    public PluginType(PluginBase.PluginRegistration steps) {
+    //        this.Plugin = new Plugin(steps);
+    //    }
+
+    //    public Plugin Plugin { get; set; }
+    //}
+
+    //public class Plugin {
+    //    public Plugin() { }
+
+    //    public Plugin(PluginBase.PluginRegistration plugin) {
+    //        this.Plugin = plugin;
+    //    }
+
+    //    public PluginBase.PluginRegistration Plugin { get; set; }
+    //}
+
+
+
     public class Solution {
         public Solution() {
             PluginTypes = new List<PluginBase.PluginRegistration>();
@@ -80,7 +118,17 @@ namespace Cacheron.RegisterFileGenerator {
             set { }
         }
 
-        [XmlElement]
+        [XmlAttribute]
+        public Guid Id {
+            get {
+                var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+                return (Guid.Parse(attribute.Value));
+            }
+            set { }
+        }
+
+        [XmlArray]
+        [XmlArrayItem("Plugin")]
         public List<PluginBase.PluginRegistration> PluginTypes { get; set; }
 
         [XmlAttribute]

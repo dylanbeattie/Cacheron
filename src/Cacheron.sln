@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheronPackage", "Cacheron
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cacheron.RegisterFileGenerator", "Cacheron.RegisterFileGenerator\Cacheron.RegisterFileGenerator.csproj", "{CBB23105-F2DB-46EC-BB7E-805042FA57CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cacheron.UnitTests", "Cacheron.UnitTests\Cacheron.UnitTests.csproj", "{BF82E6C4-1EB4-4DAE-BBD4-1897E9B8E14A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cacheron.CommandLineDemo", "Cacheron.CommandLineDemo\Cacheron.CommandLineDemo.csproj", "{CBA1DCEE-E56E-4186-A225-8B200D1EB5E5}"
+EndProject
 Global
 	GlobalSection(CRMSolutionProperties) = preSolution
 		SolutionIsBoundToCRM = True
@@ -39,6 +43,14 @@ Global
 		{CBB23105-F2DB-46EC-BB7E-805042FA57CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBB23105-F2DB-46EC-BB7E-805042FA57CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBB23105-F2DB-46EC-BB7E-805042FA57CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF82E6C4-1EB4-4DAE-BBD4-1897E9B8E14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF82E6C4-1EB4-4DAE-BBD4-1897E9B8E14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF82E6C4-1EB4-4DAE-BBD4-1897E9B8E14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF82E6C4-1EB4-4DAE-BBD4-1897E9B8E14A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA1DCEE-E56E-4186-A225-8B200D1EB5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA1DCEE-E56E-4186-A225-8B200D1EB5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA1DCEE-E56E-4186-A225-8B200D1EB5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA1DCEE-E56E-4186-A225-8B200D1EB5E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

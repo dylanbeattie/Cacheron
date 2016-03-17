@@ -1,0 +1,17 @@
+﻿@using Microsoft.Xrm.Sdk
+@model IEnumerable<Cacheron.WebHooks.Controllers.Listing>
+
+@{
+    ViewBag.Title = "title";
+}
+@foreach (var listing in Model) {
+    <h2>@listing.FullName</h2>
+    <dl>
+        @foreach (var field in listing.ContactDetails) {
+            <dt>@field.Key</dt>
+            <dd>@field.Value</dd>
+        }
+    </dl>
+}
+}
+<h2>title</h2>
